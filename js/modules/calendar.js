@@ -4,15 +4,22 @@ export function initCalendar() {
     const dayNamesContainer = document.querySelector('.calendar__day-names')
     const prevBtn = document.getElementById('prev-btn')
     const nextBtn = document.getElementById('next-btn')
+    const eventsTitleSpan = document.querySelector('.calendar-events__title span')
 
     const monthNames = [
         'Январь','Февраль','Март','Апрель','Май','Июнь',
-        'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',
+        'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
     ]
 
     const dayNames = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
 
     let currentDate = new Date()
+
+    const monthNamesForEvents = [
+        'января','февраля','марта','апреля','мая','июня',
+        'июля','августа','сентября','октября','ноября','декабря'
+    ];
+    eventsTitleSpan.textContent = `${currentDate.getDate()} ${monthNamesForEvents[currentDate.getMonth()]}`
 
     const renderDayNames = () => {
         dayNamesContainer.innerHTML = dayNames.map(day => `<span>${day}</span>`).join('')
@@ -52,7 +59,16 @@ export function initCalendar() {
         for (let i = 1; i <= nextDays; i++) {
             daysContainer.innerHTML += `<span class="calendar__days-hidden next">${i}</span>`
         }
-    }
+
+        daysContainer.querySelectorAll('span').forEach(span => {
+            span.addEventListener('click', () => {
+                if (span.classList.contains('calendar__days-hidden')) return
+
+                const day = span.textContent
+                eventsTitleSpan.textContent = `${day} ${monthNamesForEvents[month]}`
+            });
+        });
+    };
 
     const changeMonth = delta => {
         currentDate.setMonth(currentDate.getMonth() + delta)

@@ -316,4 +316,101 @@
 .calendar__days span.today {
   background-color: var(--accent-color);
   color: var(--white-color);
+}
+
+.calendar-events__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.calendar-events__title {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--main-color);
+}
+.calendar-events__title span {
+  background-color: #FF6B00;
+  color: var(--white-color);
+  border-left: 7px solid #FF6B00;
+  border-right: 10px solid #FF6B00;
+}
+
+.calendar {
+  position: relative;
+  max-width: 480px;
+  height: 434px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.calendar__header {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+}
+.calendar__months-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.calendar__btn {
+  background: none;
+  border: none;
+  transition: opacity 0.1s;
+}
+.calendar__btn:hover {
+  opacity: 0.7;
+}
+.calendar__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.calendar__day-names, .calendar .calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  color: var(--main-color);
+  justify-items: center;
+}
+.calendar__days {
+  row-gap: 5px;
+}
+
+.calendar__days span:not(.calendar__days-hidden) {
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background-color: var(--white-color);
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s;
+}
+.calendar__days span:not(.calendar__days-hidden):hover {
+  background-color: rgba(var(--text-color), 0.3);
+}
+
+.last, .next {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  color: var(--text-color);
+  cursor: default;
+  pointer-events: none;
+}
+
+.calendar__days span.today {
+  background-color: var(--accent-color);
+  color: var(--white-color);
 }/*# sourceMappingURL=main.css.map */
