@@ -54,25 +54,27 @@ body {
 }
 
 .btn {
-  &-accent, .btn-white {
+  &-accent, 
+  &-white {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--accent-color);
     outline: none;
     transition: all 0.3s ease;
     font-size: 16px;
+    border: 1px solid var(--accent-color);
+    
 
     &:hover{
-      transform: scale(1.02);
+      filter: brightness(1.1);
     }
 
     &:focus{
-      border: 1px solid var(--white-color);
+      border: 1px solid var(--accent-color);
     }
 
     &:active{
-      transform: scale(0.95);
+      transform: translateY(1px);
     }
     &:disabled{
       transform: none;
@@ -81,7 +83,7 @@ body {
 
   &-accent{
     background-color: var(--accent-color);
-    color: var(--white-color)
+    color: var(--white-color);
   }
 
   &-white{

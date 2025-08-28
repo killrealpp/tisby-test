@@ -18,6 +18,12 @@
             border-right: 10px solid #FF6B00;
         }
     }
+
+    &__content{
+        display: flex;
+        align-items:flex-start;
+        gap: 48px;
+    }
 }
 
 .calendar{
@@ -89,6 +95,7 @@
     transition: background-color 0.1s;
 
     &:hover{
+        color: var(--main-color);
         background-color: rgba($color: var(--text-color), $alpha: 0.3);
     }
 }
@@ -108,4 +115,14 @@
 .calendar__days span.today{
     background-color: var(--accent-color);
     color: var(--white-color)
+}
+
+.calendar__days span.selected {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+.calendar__days span.today:not(.selected) {
+    background-color: transparent;
+    color: var(--main-color);
 }

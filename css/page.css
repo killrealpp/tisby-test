@@ -151,25 +151,25 @@ body {
   justify-content: center;
 }
 
-.btn-accent, .btn .btn-white {
+.btn-accent, .btn-white {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--accent-color);
   outline: none;
   transition: all 0.3s ease;
   font-size: 16px;
+  border: 1px solid var(--accent-color);
 }
-.btn-accent:hover, .btn .btn-white:hover {
-  transform: scale(1.02);
+.btn-accent:hover, .btn-white:hover {
+  filter: brightness(1.1);
 }
-.btn-accent:focus, .btn .btn-white:focus {
-  border: 1px solid var(--white-color);
+.btn-accent:focus, .btn-white:focus {
+  border: 1px solid var(--accent-color);
 }
-.btn-accent:active, .btn .btn-white:active {
-  transform: scale(0.95);
+.btn-accent:active, .btn-white:active {
+  transform: translateY(1px);
 }
-.btn-accent:disabled, .btn .btn-white:disabled {
+.btn-accent:disabled, .btn-white:disabled {
   transform: none;
 }
 .btn-accent {

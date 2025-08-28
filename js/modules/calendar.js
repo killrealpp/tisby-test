@@ -18,12 +18,13 @@ export function initCalendar() {
     const monthNamesForEvents = [
         'января','февраля','марта','апреля','мая','июня',
         'июля','августа','сентября','октября','ноября','декабря'
-    ];
+    ]
+
     eventsTitleSpan.textContent = `${currentDate.getDate()} ${monthNamesForEvents[currentDate.getMonth()]}`
 
     const renderDayNames = () => {
         dayNamesContainer.innerHTML = dayNames.map(day => `<span>${day}</span>`).join('')
-    };
+    }
 
     const renderCalendar = () => {
         const year = currentDate.getFullYear()
@@ -51,7 +52,7 @@ export function initCalendar() {
                 month === new Date().getMonth() &&
                 year === new Date().getFullYear()
 
-            daysContainer.innerHTML += `<span class="${isToday ? 'today' : ''}">${day}</span>`
+            daysContainer.innerHTML += `<span class="${isToday ? 'today selected' : ''}">${day}</span>`
         }
 
         const totalDays = firstDate + daysInMonth
@@ -64,16 +65,20 @@ export function initCalendar() {
             span.addEventListener('click', () => {
                 if (span.classList.contains('calendar__days-hidden')) return
 
+                daysContainer.querySelectorAll('span.selected').forEach(s => s.classList.remove('selected'))
+
+                span.classList.add('selected')
+
                 const day = span.textContent
                 eventsTitleSpan.textContent = `${day} ${monthNamesForEvents[month]}`
-            });
-        });
-    };
+            })
+        })
+    }
 
     const changeMonth = delta => {
         currentDate.setMonth(currentDate.getMonth() + delta)
         renderCalendar()
-    }
+    };
 
     prevBtn.addEventListener('click', () => changeMonth(-1))
     nextBtn.addEventListener('click', () => changeMonth(1))
