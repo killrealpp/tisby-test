@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<link rel="stylesheet" href="/css/lib/swiper.min.css">
+
+@@include('../modules/head.html', { "title" : "Главная", "links" :
+["./css/page.css", "./css/main.css"] })
+
+<body>
+  <div class="wrapper">
+    @@include('../modules/header.html')
+
+    <main class="main">
+
+      <section class="top">
+        <div class="container">
+          @@include('../modules/details/swiper.html')
+        </div>
+      </section>
+
+      <section class="search">
+        <div class="container">
+          <div class="search__inner">
+            <div class="search__details">
+              <h2 class="search__title">Блок с поиском</h2>
+              <div class="search__stars">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                  <path
+                    d="M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z"
+                    fill="#2F5DD3" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                  <path
+                    d="M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z"
+                    fill="#2F5DD3" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+                  <path
+                    d="M13.5 0C14.8895 6.79798 20.202 12.1105 27 13.5C20.202 14.8895 14.8895 20.202 13.5 27C12.1105 20.202 6.79798 14.8895 0 13.5C6.79798 12.1105 12.1105 6.79798 13.5 0Z"
+                    fill="#2F5DD3" />
+                </svg>
+              </div>
+            </div>
+            @@include('../modules/details/search-modal.html')
+          </div>
+        </div>
+      </section>
+
+      <section class="calendar-events">
+        <div class="container">
+          <div class="calendar-events__inner">
+            <h3 class="calendar-events__title">Мероприятия на <span>18 апреля</span></h3>
+            <div class="calendar-events__content">
+              @@include('../modules/details/calendar.html')
+              @@include('../modules/details/events.html')
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- @@include('../modules/details/tag.html', {"text": "Очень длинный тэг"}) -->
+
+    </main>
+
+    @@include('../modules/footer.html')
+  </div>
+  <script src="/js/lib/swiper.min.js"></script>
+  <script src="/js/index.js" type="module"></script>
+</body>
+
+</html>
