@@ -197,10 +197,13 @@
   opacity: 1;
 }
 .search__field:hover {
-  border-color: rgba(var(--text-color), 0.3);
+  border-color: rgba(108, 111, 117, 0.3);
 }
 .search__field:focus-within, .search__field:active {
-  border-color: #2F5DD3;
+  border-color: var(--accent-color);
+}
+.search__field:focus-within .search__input, .search__field:active .search__input {
+  padding: 13px 24px;
 }
 .search__field:focus-within::after, .search__field:active::after {
   opacity: 0;
@@ -213,8 +216,9 @@
   outline: none;
   border: none;
   width: 100%;
-  padding: 13px 0 13px 46px;
+  padding: 13px 46px;
   transition: all 0.3s ease;
+  font-size: 16px;
 }
 .search__btn {
   min-height: 48px;
@@ -403,4 +407,186 @@
   padding: 4px 8px;
   background-color: rgba(47, 93, 211, 0.1);
   color: #2F5DD3;
+}
+
+.register {
+  position: relative;
+}
+.register__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.register__title {
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--main-color);
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 48px;
+  background-color: var(--white-color);
+  max-width: 580px;
+  width: 100%;
+}
+.register__input {
+  width: 100%;
+  padding: 13px 24px 13px 24px;
+  font-size: 16px;
+  border: 2px solid rgba(108, 111, 117, 0.3);
+  transition: all 0.3s ease;
+}
+.register__input:focus-within, .register__input:active {
+  border-color: var(--accent-color);
+}
+.register-gender {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.register-gender label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.register-gender__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  position: relative;
+}
+.register-gender__input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  right: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+.register-gender__input:hover::after {
+  background-color: rgba(47, 93, 211, 0.2);
+}
+.register-gender__input:checked::after {
+  background-color: var(--accent-color);
+}
+.register-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  width: 100%;
+}
+
+.select {
+  width: 100%;
+  position: relative;
+}
+.select.open-select .select__list {
+  visibility: visible;
+  opacity: 1;
+}
+.select.open-select .select__btn .icon {
+  rotate: 180deg;
+}
+.select__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white-color);
+  width: 100%;
+  padding: 13px 24px 13px 24px;
+  font-size: 16px;
+  border: 2px solid rgba(108, 111, 117, 0.3);
+}
+.select__btn .icon {
+  transition: rotate 0.3s;
+}
+.select__btn:focus-within, .select__btn:active {
+  border-color: var(--accent-color);
+}
+.select__list {
+  width: 100%;
+  background-color: var(--white-color);
+  border: 2px solid rgba(108, 111, 117, 0.3);
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+}
+.select__item {
+  width: 100%;
+  padding: 13px 24px;
+  transition: all 0.3s ease;
+}
+.select__item:hover {
+  background-color: rgba(108, 111, 117, 0.3);
+}
+
+.register__btn {
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 24px;
+}
+.register__devider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.register__devider span {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(108, 111, 117, 0.3);
+}
+.register__devider-text {
+  flex-shrink: 0;
+}
+.register__choice {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.register__choice-btn {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+.yandex {
+  background-color: #FC3F1D;
+}
+
+.vkontakte {
+  background-color: #0077FF;
+}
+
+.register__decor {
+  position: absolute;
+  top: -250px;
+  right: 0;
+  left: 0;
+  bottom: -50px;
+  z-index: -1;
+}
+.register__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */

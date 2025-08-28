@@ -61,12 +61,16 @@
 
 
         &:hover{
-            border-color: rgba($color: var(--text-color), $alpha: 0.3);
+            border-color: rgba($color: #6C6F75, $alpha: 0.3);
         }
 
         &:focus-within,
         &:active {
-            border-color: #2F5DD3;
+            border-color: var(--accent-color);
+
+            .search__input{
+                padding: 13px 24px;
+            }
 
             &::after {
                 opacity: 0;
@@ -84,8 +88,9 @@
         outline: none;
         border: none;
         width: 100%;
-        padding: 13px 0 13px 46px;
+        padding: 13px 46px;
         transition: all 0.3s ease;
+        font-size: 16px;
     }
 
 
