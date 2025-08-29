@@ -1,14 +1,14 @@
-.events{
+.events {
     max-width: 656px;
     width: 100%;
 
-    &__inner{
+    &__inner {
         display: flex;
         flex-direction: column;
         gap: 24px;
     }
 
-    &__item{
+    &__item {
         padding: 24px;
         background-color: var(--white-color);
         display: flex;
@@ -17,36 +17,36 @@
         gap: 24px;
     }
 
-    &__tags{
+    &__tags {
         display: flex;
         align-items: center;
         gap: 8px;
         flex-wrap: wrap;
     }
 
-    &__text{
+    &__text {
         font-size: 18px;
         font-weight: 600;
         color: var(--main-color);
     }
 
-    &__btns{
+    &__btns {
         display: flex;
         align-items: center;
         gap: 24px;
     }
 
-    &__btn{
+    &__btn {
         width: fit-content;
         min-height: 48px;
         font-size: 16px;
         font-weight: 400;
 
-        &.btn-white{
+        &.btn-white {
             padding: 0 38px;
         }
-        
-        &.btn-accent{
+
+        &.btn-accent {
             position: relative;
             display: flex;
             align-items: center;
@@ -54,11 +54,11 @@
             padding: 0 48px 0 32px;
             border-bottom-left-radius: 15px;
 
-            svg{
+            svg {
                 transform: translateY(1px);
             }
 
-            &::after{
+            &::after {
                 content: '';
                 position: absolute;
                 width: 45px;
@@ -66,14 +66,33 @@
                 rotate: 45deg;
                 background-color: var(--white-color);
                 right: -12%;
-                top: -50%;
+                top: -55%;
             }
         }
     }
 }
 
-.tag{
+.tag {
     padding: 4px 8px;
     background-color: rgba($color: #2F5DD3, $alpha: 0.1);
     color: #2F5DD3;
+}
+
+@media (max-width: 535px) {
+    .events {
+        &__btns {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__btn {
+            width: 100%;
+        }
+    }
+
+    .events__btn.btn-accent::after {
+        right: -23px;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 80%;
+    }
 }

@@ -41,8 +41,8 @@
   position: relative;
 }
 .top__details {
-  padding-left: clamp(1.5rem, 0.4035rem + 3.5088vw, 3rem);
-  padding-right: clamp(1.5rem, 0.4035rem + 3.5088vw, 3rem);
+  padding-left: 48px;
+  padding-right: 48px;
   padding-top: 24px;
   padding-bottom: 24px;
   max-width: 704px;
@@ -144,6 +144,64 @@
   height: 24px;
 }
 
+@media (max-width: 930px) {
+  .top__slide {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top__slide-img {
+    max-width: 100%;
+    width: 100%;
+  }
+  .top__details {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .swiper__details {
+    top: 55px;
+  }
+}
+@media (max-width: 775px) {
+  .swiper__details {
+    top: 37px;
+  }
+}
+@media (max-width: 661px) {
+  .swiper__details {
+    top: 15px;
+  }
+}
+@media (max-width: 569px) {
+  .swiper__details {
+    top: -5px;
+  }
+}
+@media (max-width: 489px) {
+  .swiper__details {
+    top: -30px;
+  }
+}
+@media (max-width: 453px) {
+  .swiper__details {
+    top: -50px;
+  }
+}
+@media (max-width: 425px) {
+  .swiper__details {
+    top: -70px;
+  }
+}
+@media (max-width: 389px) {
+  .swiper__details {
+    top: -90px;
+  }
+}
+@media (max-width: 363px) {
+  .swiper__details {
+    top: -110px;
+  }
+}
 .search__inner {
   background-color: var(--main-color);
   padding: 48px;
@@ -225,6 +283,17 @@
   padding: 13px;
 }
 
+@media (max-width: 825px) {
+  .search__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+  }
+  .search__details {
+    gap: 24px;
+  }
+}
 .calendar-events__inner {
   display: flex;
   flex-direction: column;
@@ -251,7 +320,6 @@
 .calendar {
   position: relative;
   max-width: 480px;
-  height: 434px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -283,13 +351,15 @@
   flex-direction: column;
   gap: 4px;
 }
-.calendar__day-names, .calendar .calendar__days {
+.calendar__day-names,
+.calendar .calendar__days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   text-align: center;
   color: var(--main-color);
   justify-items: center;
+  padding: 0 4px;
 }
 .calendar__days {
   row-gap: 5px;
@@ -311,7 +381,8 @@
   background-color: rgba(var(--text-color), 0.3);
 }
 
-.last, .next {
+.last,
+.next {
   width: 64px;
   height: 64px;
   display: flex;
@@ -338,6 +409,25 @@
   color: var(--main-color);
 }
 
+@media (max-width: 967px) {
+  .calendar-events__content {
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 507px) {
+  .calendar__days span:not(.calendar__days-hidden), .last, .next {
+    width: clamp(3rem, -0.1667rem + 13.3333vw, 4rem);
+    height: clamp(3rem, -0.1667rem + 13.3333vw, 4rem);
+  }
+  .calendar__days {
+    padding: 0 11px;
+  }
+  .calendar-events__title {
+    font-size: 24px;
+  }
+}
 .events {
   max-width: 656px;
   width: 100%;
@@ -400,7 +490,7 @@
   rotate: 45deg;
   background-color: var(--white-color);
   right: -12%;
-  top: -50%;
+  top: -55%;
 }
 
 .tag {
@@ -409,6 +499,20 @@
   color: #2F5DD3;
 }
 
+@media (max-width: 535px) {
+  .events__btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .events__btn {
+    width: 100%;
+  }
+  .events__btn.btn-accent::after {
+    right: -23px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 80%;
+  }
+}
 .register {
   position: relative;
 }
@@ -417,6 +521,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  position: relative;
 }
 .register__title {
   font-size: 32px;
@@ -576,17 +681,40 @@
   background-color: #0077FF;
 }
 
-.register__decor {
+.register__back {
   position: absolute;
   top: -250px;
   right: 0;
   left: 0;
   bottom: -50px;
-  z-index: -1;
+  z-index: -2;
 }
-.register__img {
+.register__back-img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.register__front {
+  position: absolute;
+  right: -15px;
+  top: 30px;
+  bottom: 0;
+  left: 390px;
+  z-index: -1;
+}
+.register__front-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 610px) {
+  .register__front {
+    display: none;
+  }
+  .register-form {
+    padding: 24px;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -58,23 +58,24 @@
       </section>
 
       <section class="register">
-        <div class="register__decor">
-              <picture>
-              <source srcset="./img/pictures/back2x.webp 2x, ./img/pictures/back.webp 1x" type="image/webp">
-              <source srcset="./img/pictures/back2x.png 2x, ./img/pictures/back.png 1x" type="image/png">
-              <img class="register__img" src="./img/back.png" width="1730" height="926" alt="Изображение">
-            </picture>
-            </div>
+        <div class="register__back">
+          <picture>
+            <source srcset="./img/pictures/back2x.webp 2x, ./img/pictures/back.webp 1x" type="image/webp">
+            <source srcset="./img/pictures/back2x.png 2x, ./img/pictures/back.png 1x" type="image/png">
+            <img class="register__back-img" src="./img/back.png" width="1730" height="926" alt="">
+          </picture>
+        </div>
         <div class="container">
           <div class="register__inner">
             <h3 class="register__title">Подача заявки</h3>
             @@include('../modules/details/register.html')
-            
-            <!-- <picture>
-              <source srcset="./img/pictures/Image2x.webp 2x, ./img/pictures/Image.webp 1x" type="image/webp">
-              <source srcset="./img/pictures/Image2x.png 2x, ./img/pictures/Image.png 1x" type="image/png">
-              <img class="top__img" src="./img/Image.png" width="480" height="400" alt="Изображение">
-            </picture> -->
+            <div class="register__front">
+              <picture>
+                <source srcset="./img/pictures/front2x.webp 2x, ./img/pictures/front.webp 1x" type="image/webp">
+                <source srcset="./img/pictures/front2x.png 2x, ./img/pictures/front.png 1x" type="image/png">
+                <img class="register__front-img" src="./img/front.png" width="878" height="878" alt="">
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -82,7 +83,6 @@
 
     </main>
 
-    @@include('../modules/footer.html')
   </div>
   <script src="/js/lib/swiper.min.js"></script>
   <script src="/js/index.js" type="module"></script>

@@ -1,14 +1,14 @@
 <form class="register-form">
-    <input class="register__input" name="name" type="text" placeholder="Имя">
-    <input class="register__input" name="mail" type="email" placeholder="Почта">
+    <input class="register__input" name="name" type="text" placeholder="Имя" aria-label="Ваше имя">
+    <input class="register__input" name="mail" type="email" placeholder="Почта" aria-label="Электронная почта">
     <div class="register-gender">
         Пол:
         <label>
-            <input class="register-gender__input" type="radio" name="gender" value="male">
+            <input class="register-gender__input" type="radio" name="gender" value="male" aria-label="Мужской пол">
             <span>Мужской</span>
         </label>
         <label>
-            <input class="register-gender__input" type="radio" name="gender" value="female">
+            <input class="register-gender__input" type="radio" name="gender" value="female" aria-label="Женский пол">
             <span>Женский</span>
         </label>
     </div>
@@ -16,19 +16,19 @@
         <h4 class="register-select__title">Выберите</h4>
         @@include('../details/select.html')
     </div>
-    <button class="register__btn btn-accent">Подать заявку</button>
+    <button class="register__btn btn-accent" aria-label="Подать заявку">Подать заявку</button>
     <div class="register__devider">
         <span></span>
         <p class="register__devider-text">Другой способ</p>
         <span></span>
     </div>
     <div class="register__choice">
-        <button class="register__choice-btn yandex">
+        <button class="register__choice-btn yandex" type="button" aria-label="Войти через Яндекс">
             <span class="icon">
                 <img class="register__choice-img " src="/img/icons/yandex.svg" alt="яндекс">
             </span>
         </button>
-        <button class="register__choice-btn vkontakte">
+        <button class="register__choice-btn vkontakte" type="button" aria-label="Войти через ВКонтакте">
             <span class="icon">
                 <img class="register__choice-img " src="/img/icons/vkontakte.svg" alt="вконтакте">
             </span>
