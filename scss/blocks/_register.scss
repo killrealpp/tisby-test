@@ -62,6 +62,7 @@
             border: 2px solid var(--accent-color);
             cursor: pointer;
             position: relative;
+            border-radius: 0;
 
             &::after {
                 content: '';
@@ -119,6 +120,10 @@
         padding: 13px 24px 13px 24px;
         font-size: 16px;
         border: 2px solid rgba($color: #6C6F75, $alpha: 0.3);
+
+        &-text{
+            color: var(--main-color)
+        }
 
         .icon {
             transition: rotate 0.3s;
