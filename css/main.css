@@ -90,7 +90,8 @@
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  transform: translateY(-2px);
+  filter: brightness(1.1);
+  transform: translateY(1px);
 }
 
 .swiper__details {
